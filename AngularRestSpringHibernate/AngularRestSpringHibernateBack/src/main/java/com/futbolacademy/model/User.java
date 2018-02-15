@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -33,11 +35,13 @@ public class User {
 	@Column(name="examenaprobado", nullable=true)
 	private Boolean isExamApproved;
 	
-	@Column(name="roles_idroles", nullable=false)
-	private Integer idRol;
+	@ManyToOne
+    @JoinColumn(name = "roles_idroles")
+    private Role rol;
 	
-	@Column(name="estado_idestado", nullable=false)
-	private Integer idStatus;
+	@ManyToOne
+    @JoinColumn(name = "estado_idestado")
+    private Status status;
 
 	public Integer getId() {
 		return id;
@@ -87,19 +91,19 @@ public class User {
 		this.isExamApproved = isExamApproved;
 	}
 
-	public Integer getIdRol() {
-		return idRol;
+	public Role getRol() {
+		return rol;
 	}
 
-	public void setIdRol(Integer idRol) {
-		this.idRol = idRol;
+	public void setRol(Role rol) {
+		this.rol = rol;
 	}
 
-	public Integer getIdStatus() {
-		return idStatus;
+	public Status getStatus() {
+		return status;
 	}
 
-	public void setIdStatus(Integer idStatus) {
-		this.idStatus = idStatus;
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 }
