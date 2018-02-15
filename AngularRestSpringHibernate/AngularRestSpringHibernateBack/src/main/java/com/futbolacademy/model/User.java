@@ -15,7 +15,8 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer idusuarios;
+	@Column(name="idusuarios", nullable=false)
+	private Integer id;
 	
 	@Column(name="nombre", nullable=true)
 	private String name;
@@ -38,12 +39,12 @@ public class User {
 	@Column(name="estado_idestado", nullable=false)
 	private Integer idStatus;
 
-	public Integer getIdusuarios() {
-		return idusuarios;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setIdusuarios(Integer idusuarios) {
-		this.idusuarios = idusuarios;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {

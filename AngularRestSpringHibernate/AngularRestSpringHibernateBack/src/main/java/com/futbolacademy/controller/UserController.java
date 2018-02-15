@@ -39,7 +39,7 @@ public class UserController {
 	
 	@RequestMapping(value="/users/update/{id}", method=RequestMethod.PUT)
 	public @ResponseBody User update(@PathVariable("id") Integer id,@RequestBody User user) {
-		user.setIdusuarios(id);
+		user.setId(id);
 		userService.saveOrUpdate(user);
 		return user;
 	}
