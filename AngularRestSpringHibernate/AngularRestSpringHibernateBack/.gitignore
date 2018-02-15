@@ -1,0 +1,11 @@
+#Exclude target folder
+/target/*
+
+#Exclude .classpath
+*.classpath
+
+#Exclude .project
+*.project
+
+#Exclude settings folder
+/.settings/*
